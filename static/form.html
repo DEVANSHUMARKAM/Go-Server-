@@ -3,15 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stylish Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            margin: 0;
+        }
+
+        div {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #f5576c;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d94555;
+        }
+
+        h2 {
+            text-align: center;
+            color: #f5576c;
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
     <div>
+        <h2>Contact Us</h2>
         <form method="POST" action="/form">
-        <label>Name</label><input name="name" type="text" value=""/>
-        <label>Address</label><input name="Address" type="text" value=""/>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Enter your name" required />
 
-        <input type="submit" value="submit"/>
+            <label for="address">Address</label>
+            <input id="address" name="address" type="text" placeholder="Enter your address" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email" required />
+
+            <!-- <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" required /> -->
+
+            <input type="submit" value="Submit" />
         </form>
     </div>
 </body>
